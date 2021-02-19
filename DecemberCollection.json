@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "92464077-43d2-4a35-ba6f-1dc7ed1fcbcd",
+		"name": "December Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post and Put",
+			"item": [
+				{
+					"name": "1 Put a new user in Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "065bc69b-7b15-48fb-8239-8cc2390f3cb8",
+								"exec": [
+									"pm.test(\"Verify response is ok with a Status Code of 201 created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}"
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2 Make change to Morpheus Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "77774d34-e7ba-4e0f-816b-ffb9b087c488",
+								"exec": [
+									"pm.test(\"Verify response is ok with a Status Code of 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}"
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users/208",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"208"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1260d51c-f3e4-4e77-a31c-7f9f2239a2c1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "07bae603-73d4-4c8d-9bba-ffb43b27d92f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
